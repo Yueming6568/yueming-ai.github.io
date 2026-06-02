@@ -1,0 +1,1777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Yueming Lyu @ Nanjing University</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yueming Lyu - Assistant Professor at Nanjing University. Research in generative AI, agent systems, and AI safety.">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Lora:wght@500;600;700&display=swap">
+    <script type="text/javascript" src="./assets/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="./assets/js/bootstrap.min.js"></script>
+    <!-- members-data.js moved to members.html -->
+    <style>
+        :root {
+            /* Color */
+            --accent:        #7C3AED;
+            --accent-hover:  #6D28D9;
+            --accent-light:  #E4DFFE;
+            --accent-dark:   #5B21B6;
+            --accent-subtle: #EDE9FE;
+            --text-primary:  #1B1330;
+            --text-body:     #3B3452;
+            --text-secondary:#6E6783;
+            --bg-page:       #FAFAFE;
+            --bg-alt:        #F6F5FB;
+            --bg-card:       #FFFFFF;
+            --border:        #E8E5F0;
+            --shadow-sm:     0 1px 3px rgba(27,19,48,0.05);
+            --shadow-md:     0 4px 20px rgba(27,19,48,0.07);
+            --shadow-lg:     0 12px 40px rgba(27,19,48,0.10);
+            --radius:        14px;
+            --radius-sm:     8px;
+            --footer-bg:     #1B1330;
+            /* Typography — 1.333 scale (perfect fourth) */
+            --font-display:  'Lora', Georgia, serif;
+            --font-body:     'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --text-xs:       0.8125rem;  /* 13px — captions, fine print */
+            --text-sm:       0.9375rem;  /* 15px — labels, badges, dates */
+            --text-base:     1.0625rem;  /* 17px — body */
+            --text-lg:       1.375rem;   /* 22px — card titles, subheadings */
+            --text-xl:       clamp(1.875rem, 3.2vw, 2.5rem); /* section titles */
+            --text-2xl:      clamp(2.5rem, 5vw, 3.5rem);    /* hero name */
+            /* Spacing — 4pt base */
+            --space-xs:      4px;
+            --space-sm:      8px;
+            --space-md:      16px;
+            --space-lg:      24px;
+            --space-xl:      48px;
+            --space-2xl:     72px;
+            --space-3xl:     96px;
+            --space-section: clamp(64px, 8vw, 96px);
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-body);
+            line-height: 1.7;
+            color: var(--text-body);
+            background: var(--bg-page);
+            font-size: var(--text-base);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
+        a:hover { color: var(--accent-hover); }
+
+        /* ===== NAVBAR ===== */
+        #header {
+            background: rgba(250,250,254,0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-xl);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+
+        #logo a {
+            font-family: var(--font-display);
+            font-size: var(--text-lg);
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+            letter-spacing: -0.01em;
+        }
+
+        #logo span {
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        #navigation ul {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 2px;
+        }
+
+        #navigation a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: var(--text-sm);
+            padding: 8px 14px;
+            border-radius: var(--radius-sm);
+            transition: color 0.2s;
+            white-space: nowrap;
+            position: relative;
+        }
+
+        #navigation a:hover { color: var(--text-primary); }
+        #navigation .active a { color: var(--accent); font-weight: 600; }
+
+        #navigation a::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 14px;
+            right: 14px;
+            height: 2px;
+            background: var(--accent);
+            border-radius: 1px;
+            transform: scaleX(0);
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        #navigation .active a::after { transform: scaleX(1); }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: var(--text-lg);
+            color: var(--text-primary);
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        /* ===== SECTION FRAMEWORK ===== */
+        .section-wrap {
+            padding: var(--space-section) 0;
+        }
+
+        .section-wrap.alt-bg {
+            background: var(--bg-alt);
+        }
+
+        .section-wrap.white-bg {
+            background: var(--bg-card);
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-xl);
+        }
+
+        .section-title-bar {
+            margin-bottom: var(--space-xl);
+        }
+
+        .section-title-bar::after { display: none; }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: var(--text-xl);
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+        }
+
+        /* ===== HERO SECTION ===== */
+        #home {
+            background: linear-gradient(160deg, #1B1330 0%, #2A1654 45%, #1B1330 100%);
+            padding: clamp(80px, 10vw, 120px) 0 clamp(48px, 6vw, 72px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Subtle radial glow behind photo */
+        #home::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 50% 60% at 72% 50%, rgba(124,58,237,0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-xl);
+            display: flex;
+            align-items: center;
+            gap: var(--space-2xl);
+            position: relative;
+        }
+
+        .hero-text { flex: 1; }
+
+        .hero-lab-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--accent-light);
+            font-size: var(--text-xs);
+            font-weight: 600;
+            margin-bottom: 20px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            opacity: 0.85;
+            text-decoration: none;
+        }
+
+        .hero-lab-badge:hover { color: #fff; opacity: 1; }
+
+        .hero-lab-badge i { font-size: var(--text-sm); }
+
+        .hero-name {
+            font-family: var(--font-display);
+            font-size: clamp(2.8rem, 6vw, 4rem);
+            font-weight: 700;
+            color: #FEFCFF;
+            margin-bottom: var(--space-md);
+            line-height: 1.08;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-title {
+            font-size: var(--text-base);
+            color: rgba(255,255,255,0.55);
+            font-weight: 400;
+            margin-bottom: var(--space-lg);
+            line-height: 1.8;
+        }
+
+        .hero-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: var(--space-lg);
+        }
+
+        .hero-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: var(--text-sm);
+            color: rgba(255,255,255,0.6);
+        }
+
+        .hero-contact-item i {
+            color: var(--accent-light);
+            font-size: var(--text-sm);
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .hero-contact-item a { color: rgba(255,255,255,0.7); text-decoration: none; }
+        .hero-contact-item a:hover { color: #fff; }
+
+        .social-links {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 0;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: var(--radius-sm);
+            color: rgba(255,255,255,0.7);
+            font-size: var(--text-sm);
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.15s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .social-btn i { font-size: var(--text-base); }
+
+        .social-btn:hover {
+            border-color: rgba(255,255,255,0.3);
+            color: #fff;
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* stats removed */
+
+        .hero-image { flex-shrink: 0; }
+
+        .hero-image img {
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3), 0 0 80px rgba(124,58,237,0.15);
+        }
+
+        /* Hero stagger entrance */
+        @keyframes heroFadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-lab-badge, .hero-name, .hero-title,
+        .hero-contact, .social-links, .hero-image {
+            animation: heroFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+
+        .hero-lab-badge { animation-delay: 0.05s; }
+        .hero-name      { animation-delay: 0.12s; }
+        .hero-title     { animation-delay: 0.19s; }
+        .hero-contact   { animation-delay: 0.26s; }
+        .social-links   { animation-delay: 0.33s; }
+        .hero-image     { animation-delay: 0.15s; }
+
+        /* ===== ABOUT SECTION ===== */
+        .bio-text {
+            font-size: var(--text-base);
+            color: var(--text-body);
+            line-height: 1.85;
+            margin-bottom: 16px;
+        }
+
+        .bio-text a {
+            color: var(--accent);
+            font-weight: 500;
+            text-decoration: underline;
+            text-decoration-color: var(--accent-light);
+            text-underline-offset: 3px;
+            transition: text-decoration-color 0.2s;
+        }
+
+        .bio-text a:hover { text-decoration-color: var(--accent); }
+
+        /* Recruit banner */
+        .recruit-banner {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            background: linear-gradient(135deg, #1B1330, #2A1654);
+            border-radius: var(--radius);
+            padding: 32px 36px;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s;
+        }
+
+        .recruit-banner::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.12) 50%, transparent 60%);
+            transform: translateX(-100%);
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+            pointer-events: none;
+        }
+
+        .recruit-banner:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(27,19,48,0.25);
+        }
+
+        .recruit-banner:hover::after {
+            transform: translateX(100%);
+        }
+
+        .recruit-text { flex: 1; position: relative; z-index: 1; }
+
+        .recruit-text strong {
+            display: block;
+            font-size: var(--text-xl);
+            color: #FEFCFF;
+            margin-bottom: 6px;
+        }
+
+        .recruit-text span {
+            font-size: var(--text-lg);
+            color: rgba(255,255,255,0.6);
+            line-height: 1.6;
+        }
+
+        .recruit-btn {
+            flex-shrink: 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 10px 22px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.25);
+            color: #fff;
+            border-radius: var(--radius-sm);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            position: relative;
+            z-index: 1;
+        }
+
+        .recruit-btn:hover {
+            background: rgba(255,255,255,0.18);
+            border-color: rgba(255,255,255,0.4);
+            color: #fff;
+        }
+
+        /* Academic Services */
+        .services-heading {
+            font-family: var(--font-display);
+            font-size: var(--text-lg);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 44px 0 18px;
+        }
+
+        .services-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .services-row {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            font-size: var(--text-sm);
+            line-height: 1.6;
+        }
+
+        .services-role {
+            flex-shrink: 0;
+            font-weight: 700;
+            color: var(--text-primary);
+            min-width: 150px;
+        }
+
+        .services-venues {
+            color: var(--text-secondary);
+        }
+
+        /* visitor map is now in footer — styles are inline */
+
+        /* ===== RESEARCH SECTION ===== */
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-lg);
+        }
+
+        .research-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: var(--space-lg) var(--space-lg);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .research-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Icon inline with heading — no container box */
+        .research-icon {
+            display: none;
+        }
+
+        .research-card h5 {
+            font-family: var(--font-display);
+            font-size: var(--text-lg);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--space-sm);
+            line-height: 1.3;
+        }
+
+        .research-card h5 i {
+            color: var(--accent);
+            margin-right: 4px;
+        }
+
+        .research-card p {
+            font-size: var(--text-sm);
+            color: var(--text-body);
+            line-height: 1.7;
+            margin: 0;
+            flex: 1;
+        }
+
+        .research-works {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px 16px;
+            margin-top: var(--space-md);
+            padding-top: var(--space-md);
+            border-top: 1px solid var(--border);
+        }
+
+        .research-work-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 2px 0;
+            background: none;
+            color: var(--accent-dark);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1.5px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .research-work-tag::after {
+            content: '↗';
+            font-size: 0.75em;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .research-work-tag:hover {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+
+        .research-work-tag:hover::after {
+            opacity: 1;
+        }
+
+        /* ===== NEWS SECTION ===== */
+        .news-list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-item {
+            display: flex;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+            align-items: center;
+        }
+
+        .news-item:last-child { border-bottom: none; }
+
+        .news-date {
+            flex-shrink: 0;
+            color: var(--text-secondary);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            white-space: nowrap;
+            min-width: 72px;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .news-type-icon {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--text-sm);
+        }
+
+        .news-icon-accept { background: #FEF3C7; color: #B45309; }
+        .news-icon-paper  { background: var(--accent-light); color: var(--accent); }
+        .news-icon-award  { background: #FEF9C3; color: #A16207; }
+        .news-icon-people { background: #D1FAE5; color: #059669; }
+        .news-icon-lab    { background: #DBEAFE; color: #2563EB; }
+
+        .news-content {
+            flex: 1;
+            font-size: var(--text-sm);
+            color: var(--text-body);
+            line-height: 1.55;
+        }
+
+        .news-content strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .news-links {
+            display: flex;
+            gap: 8px;
+            margin-top: 8px;
+            flex-wrap: wrap;
+        }
+
+        .news-link {
+            display: inline-block;
+            padding: 3px 11px;
+            border: 1px solid var(--accent-light);
+            border-radius: 6px;
+            color: var(--accent-dark);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .news-link:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #fff;
+        }
+
+        /* ===== MEMBERS SECTION ===== */
+        .pi-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: var(--space-xl);
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-xl);
+            margin-bottom: var(--space-2xl);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .pi-photo img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-light);
+        }
+
+        .pi-info { flex: 1; }
+
+        .pi-info h3 {
+            font-family: var(--font-display);
+            font-size: var(--text-lg);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+            line-height: 1.3;
+        }
+
+        .pi-role {
+            font-size: var(--text-sm);
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 14px;
+        }
+
+        .pi-bio {
+            font-size: var(--text-base);
+            color: var(--text-body);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .pi-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+
+        .pi-tag {
+            background: var(--accent-subtle);
+            color: var(--accent-dark);
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: var(--text-sm);
+            font-weight: 500;
+        }
+
+        .pi-links {
+            display: flex;
+            gap: 8px;
+        }
+
+        .pi-link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 7px 14px;
+            background: var(--accent-subtle);
+            color: var(--accent-dark);
+            border-radius: var(--radius-sm);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .pi-link-btn:hover {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        .members-group-title {
+            font-family: var(--font-display);
+            font-size: var(--text-sm);
+            font-weight: 700;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .members-group {
+            margin-bottom: var(--space-xl);
+        }
+
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: var(--space-lg);
+        }
+
+        .member-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .member-card:hover {
+            box-shadow: 0 8px 30px rgba(27,19,48,0.12);
+        }
+
+        .member-card .member-photo {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .member-card:hover .member-photo {
+            transform: scale(1.06);
+            box-shadow: 0 4px 16px rgba(27,19,48,0.10);
+        }
+
+        .member-photo {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+        }
+
+        .member-info {
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .member-name {
+            font-family: var(--font-display);
+            font-size: var(--text-base);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 3px;
+        }
+
+        .member-title {
+            font-size: var(--text-sm);
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 3px;
+        }
+
+        .member-period {
+            font-size: var(--text-xs);
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+
+        .member-co-supervised,
+        .member-affiliation {
+            font-size: var(--text-xs);
+            color: var(--text-secondary);
+            font-style: italic;
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+
+        .member-social {
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: auto;
+            padding-top: 10px;
+            border-top: 1px solid var(--border);
+        }
+
+        .member-social a {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: var(--text-lg);
+            padding: 6px 0;
+            transition: color 0.2s;
+        }
+
+        .member-social a:hover { color: var(--accent); }
+
+        /* Alumni list */
+        .alumni-list { display: flex; flex-direction: column; gap: 6px; }
+        .alumni-row { font-size: var(--text-base); color: var(--text-body); line-height: 1.8; }
+        .alumni-row a { color: var(--accent-dark); font-weight: 600; }
+
+        /* ===== PUBLICATIONS SECTION ===== */
+        .pub-year-group {
+            margin-bottom: 8px;
+        }
+
+        .pub-year-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 4px;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid var(--border);
+            cursor: pointer;
+            user-select: none;
+            width: 100%;
+            text-align: left;
+            transition: border-color 0.2s;
+        }
+
+        .pub-year-header:hover { border-bottom-color: var(--accent); }
+
+        .pub-year-header .year-label {
+            font-family: var(--font-display);
+            font-size: var(--text-lg);
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .pub-year-header .year-count {
+            background: var(--accent-subtle);
+            color: var(--accent-dark);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            padding: 2px 10px;
+            border-radius: 100px;
+        }
+
+        .pub-year-header .chevron {
+            margin-left: auto;
+            color: var(--text-secondary);
+            transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+            font-size: var(--text-sm);
+        }
+
+        .pub-year-header[aria-expanded="true"] .chevron {
+            transform: rotate(180deg);
+        }
+
+        .pub-list {
+            padding: 12px 0 8px;
+        }
+
+        .pub-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 22px 24px;
+            margin-bottom: 10px;
+            display: flex;
+            gap: 20px;
+            transition: box-shadow 0.2s;
+        }
+
+        .pub-item:hover { box-shadow: var(--shadow-md); }
+
+        .pub-thumb {
+            flex-shrink: 0;
+            width: 110px;
+        }
+
+        .pub-thumb img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border);
+        }
+
+        .pub-content { flex: 1; }
+
+        .pub-title {
+            font-family: var(--font-display);
+            font-size: var(--text-base);
+            font-weight: 600;
+            color: var(--text-primary);
+            line-height: 1.45;
+            margin-bottom: 6px;
+        }
+
+        .pub-authors {
+            font-size: var(--text-sm);
+            color: var(--text-body);
+            line-height: 1.55;
+            margin-bottom: 6px;
+        }
+
+        .pub-authors strong {
+            color: var(--accent-dark);
+            font-weight: 600;
+        }
+
+        .pub-venue { margin-bottom: 10px; }
+
+        .pub-venue-badge {
+            display: inline-block;
+            background: var(--accent-subtle);
+            color: var(--accent-dark);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            padding: 2px 10px;
+            border-radius: 6px;
+        }
+
+        .pub-venue-badge.oral {
+            background: #FEF3C7;
+            color: #B45309;
+        }
+
+        .pub-links {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .pub-link {
+            display: inline-block;
+            padding: 4px 12px;
+            background: var(--bg-alt);
+            color: var(--text-body);
+            border-radius: 6px;
+            font-size: var(--text-sm);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .pub-link:hover {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        /* ===== OPENINGS SECTION ===== */
+        .openings-intro {
+            font-size: var(--text-base);
+            color: var(--text-body);
+            line-height: 1.85;
+            margin-bottom: var(--space-xl);
+        }
+
+        .openings-intro a {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .openings-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-lg);
+            margin-bottom: var(--space-xl);
+        }
+
+        .opening-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 28px;
+        }
+
+        .opening-card h5 {
+            font-family: var(--font-display);
+            font-size: var(--text-base);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .opening-card h5 i { color: var(--accent); }
+
+        .opening-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .opening-card li {
+            font-size: var(--text-sm);
+            color: var(--text-body);
+            padding: 5px 0 5px 18px;
+            position: relative;
+            line-height: 1.65;
+        }
+
+        .opening-card li::before {
+            content: '';
+            position: absolute;
+            left: 4px;
+            top: 14px;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+
+        .openings-cta {
+            background: var(--accent-dark);
+            border-radius: var(--radius);
+            padding: var(--space-xl);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .openings-cta-text h4 {
+            font-family: var(--font-display);
+            font-size: var(--text-lg);
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+
+        .openings-cta-text p {
+            font-size: var(--text-sm);
+            color: rgba(255,255,255,0.65);
+            margin: 0;
+        }
+
+        .openings-cta-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: rgba(255,255,255,0.15);
+            color: #fff;
+            border: 0;
+            border-radius: var(--radius-sm);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            flex-shrink: 0;
+            transition: background 0.2s;
+            backdrop-filter: blur(4px);
+        }
+
+        .openings-cta-email:hover {
+            background: rgba(255,255,255,0.25);
+            color: #fff;
+        }
+
+        /* ===== FOOTER ===== */
+        #footer {
+            background: var(--footer-bg);
+            padding: var(--space-2xl) 0 var(--space-lg);
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-xl);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            column-gap: clamp(32px, 4vw, 56px);
+            row-gap: var(--space-xl);
+            margin-bottom: var(--space-xl);
+        }
+
+        .footer-map { grid-column: 1; }
+        .footer-brand { grid-column: 2; }
+        .footer-links {
+            grid-column: 3;
+            justify-self: center;
+            text-align: left;
+        }
+
+        .footer-links a {
+            line-height: 1.8;
+        }
+        .footer-contact { grid-column: 4; }
+
+        .footer-section h5 {
+            font-family: var(--font-display);
+            font-size: var(--text-sm);
+            font-weight: 700;
+            color: rgba(255,255,255,0.85);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand h5 {
+            white-space: nowrap;
+        }
+
+        .footer-section p,
+        .footer-section address {
+            font-size: var(--text-sm);
+            color: rgba(255,255,255,0.45);
+            line-height: 1.8;
+            font-style: normal;
+        }
+
+        .footer-brand address {
+            white-space: nowrap;
+            line-height: 2;
+        }
+
+        .visitor-map-wrap {
+            text-align: left;
+            width: 180px;
+            min-height: 180px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+
+        .visitor-map-wrap .widgetContainer {
+            width: 180px;
+            min-height: 180px;
+        }
+
+        .footer-section a {
+            color: rgba(255,255,255,0.45);
+            text-decoration: none;
+            font-size: var(--text-sm);
+            line-height: 2.2;
+            display: block;
+            transition: color 0.2s;
+        }
+
+        .footer-section a:hover { color: var(--accent-light); }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 24px;
+            text-align: center;
+            font-size: var(--text-sm);
+            color: rgba(255,255,255,0.3);
+        }
+
+        /* ===== BACK TO TOP ===== */
+        #back-to-top {
+            position: fixed;
+            right: -60px;
+            bottom: 32px;
+            width: 42px;
+            height: 42px;
+            background: var(--accent);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 16px rgba(124,58,237,0.3);
+            transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.15s, transform 0.15s;
+            z-index: 999;
+            text-decoration: none;
+        }
+
+        #back-to-top.visible { right: 24px; }
+
+        #back-to-top:hover {
+            background: var(--accent-hover);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        #back-to-top:active {
+            transform: translateY(0);
+        }
+
+        #back-to-top i { font-size: var(--text-base); }
+
+        /* ===== FOCUS STATES ===== */
+        :focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        #home :focus-visible {
+            outline-color: var(--accent-light);
+        }
+
+        /* ===== SCROLL REVEAL ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== REDUCED MOTION ===== */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            .reveal { opacity: 1; transform: none; }
+            html { scroll-behavior: auto; }
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1400px) {
+            .navbar-inner,
+            .hero-inner,
+            .section-container,
+            .footer-inner { padding-left: 36px; padding-right: 36px; }
+        }
+
+        @media (max-width: 991px) {
+            .research-grid  { grid-template-columns: repeat(2, 1fr); }
+            .openings-grid  { grid-template-columns: repeat(2, 1fr); }
+            .services-row { flex-direction: column; gap: 2px; }
+            .footer-grid    { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+
+        @media (max-width: 768px) {
+            .navbar-inner { padding: 0 20px; }
+            #navigation {
+                display: none; position: absolute; top: 64px; left: 0; right: 0;
+                background: rgba(250,250,254,0.98);
+                backdrop-filter: blur(16px);
+                padding: 16px 20px;
+                box-shadow: 0 8px 32px rgba(27,19,48,0.1);
+                border-bottom: 1px solid var(--border);
+                z-index: 999;
+            }
+            #navigation.open { display: block; }
+            #navigation ul { flex-direction: column; gap: 4px; }
+            .nav-toggle { display: block; }
+
+            .hero-inner {
+                flex-direction: column-reverse; gap: 28px;
+                text-align: center; padding: 0 20px;
+            }
+            .hero-contact { align-items: center; }
+            .social-links { justify-content: center; }
+            .hero-image img { width: 180px; height: 180px; }
+
+            .section-container,
+            .footer-inner { padding: 0 20px; }
+            .section-wrap { padding: var(--space-xl) 0; }
+
+            .pi-card { flex-direction: column; text-align: center; padding: 28px; }
+            .pi-tags, .pi-links { justify-content: center; }
+
+            .openings-cta { flex-direction: column; text-align: center; padding: 32px 24px; }
+
+            .recruit-banner { flex-direction: column; gap: 16px; }
+            .recruit-btn { width: 100%; justify-content: center; }
+
+            .news-type-icon { width: 32px; height: 32px; font-size: var(--text-sm); border-radius: 8px; }
+
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .pub-item { flex-direction: column; }
+            .pub-thumb { width: 100%; max-width: 200px; }
+        }
+
+        @media (max-width: 576px) {
+            .hero-name { font-size: 2rem; }
+            .research-grid  { grid-template-columns: 1fr; }
+            .research-card:first-child { grid-column: 1; }
+            .openings-grid  { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<div id="header">
+    <div class="navbar-inner">
+        <div id="logo">
+            <a href="#home">Yueming Lyu <span>· Nanjing University</span></a>
+        </div>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+            <i class="bi bi-list"></i>
+        </button>
+        <div id="navigation">
+            <ul class="list-inline">
+                <li class="list-inline-item active"><a href="#home">Home</a></li>
+                <li class="list-inline-item"><a href="#research">Research</a></li>
+                <li class="list-inline-item"><a href="./academics.html">Academics</a></li>
+                <li class="list-inline-item"><a href="./publications.html">Publications</a></li>
+                <li class="list-inline-item"><a href="./teaching.html">Teaching</a></li>
+                <li class="list-inline-item"><a href="./members.html">Members</a></li>
+                <li class="list-inline-item"><a href="#openings">Join Us</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- ===== HERO SECTION ===== -->
+<section id="home">
+    <div class="hero-inner">
+        <div class="hero-text">
+            <a class="hero-lab-badge" href="https://prlab-nju.com/" target="_blank">
+                <i class="bi bi-mortarboard-fill"></i>
+                Pattern &amp; Recognition Lab
+            </a>
+            <h1 class="hero-name">Yueming Lyu</h1>
+            <p class="hero-title">
+                Assistant Professor<br>
+                Ph.D. Supervisor<br>
+                School of Intelligence Science and Technology<br>
+                Nanjing University
+            </p>
+            <div class="hero-contact">
+                <div class="hero-contact-item">
+                    <i class="bi bi-envelope-fill"></i>
+                    <span>
+                        <a href="mailto:ymlv@nju.edu.cn">ymlv@nju.edu.cn</a>
+                    </span>
+                </div>
+                <div class="hero-contact-item">
+                    <i class="bi bi-geo-alt-fill"></i>
+                    <span>Nanjing University Suzhou Campus, No. 1520 Taihu Avenue, Huqiu District, Suzhou, Jiangsu</span>
+                </div>
+            </div>
+            <div class="social-links">
+                <a class="social-btn" href="https://scholar.google.com/citations?user=TxuK84wAAAAJ" target="_blank">
+                    <i class="bi bi-mortarboard-fill"></i> Scholar
+                </a>
+                <a class="social-btn" href="https://github.com/NICE-PRLab" target="_blank">
+                    <i class="bi bi-github"></i> GitHub
+                </a>
+                <a class="social-btn" href="https://www.xiaohongshu.com/user/profile/5b9dca103e7d7b0001eef60d" target="_blank" rel="noopener noreferrer">
+                    <i class="bi bi-link-45deg"></i> Redbook
+                </a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="./assets/img/yueming-profile.jpg" alt="Yueming Lyu">
+        </div>
+    </div>
+</section>
+
+<!-- ===== ABOUT SECTION ===== -->
+<section id="about" class="section-wrap white-bg">
+    <div class="section-container reveal">
+        <div class="section-title-bar">
+            <h2 class="section-title">About Me</h2>
+        </div>
+        <p class="bio-text">
+            I am a tenure-track assistant professor at <a href="https://prlab-nju.com/nju/" target="_blank" rel="noopener noreferrer">PRLab (模式识别实验室)</a>, <a href="https://is.nju.edu.cn/is_en/About/list.htm" target="_blank" rel="noopener noreferrer">School of Intelligence Science and Technology</a>, <a href="https://www.nju.edu.cn/en/" target="_blank" rel="noopener noreferrer">Nanjing University</a> (<a href="https://njusz.nju.edu.cn/" target="_blank" rel="noopener noreferrer">Suzhou Campus</a>), directed by Professors <a href="https://www.nju.edu.cn/en/info/2292/4261.htm" target="_blank" rel="noopener noreferrer">Tieniu Tan (谭铁牛)</a> and <a href="https://caifeng-shan.github.io/" target="_blank" rel="noopener noreferrer">Caifeng Shan (单彩峰)</a>. I earned my PhD from <a href="https://english.ia.cas.cn/" target="_blank" rel="noopener noreferrer">CASIA</a> in 2024, advised by Professor <a href="https://www.nju.edu.cn/en/info/2292/4261.htm" target="_blank" rel="noopener noreferrer">Tieniu Tan (谭铁牛)</a> and co-advised by Professor <a href="https://jdong-casia.github.io/" target="_blank" rel="noopener noreferrer">Jing Dong (董晶)</a>. In 2024, I was a visiting researcher at the <a href="https://www.nus.edu.sg/" target="_blank" rel="noopener noreferrer">National University of Singapore</a>.
+        </p>
+        <p class="bio-text">
+            My research focuses on generative models, large models and agents, and the foundational algorithms of embodied intelligence, together with complementary studies on safety issues that arise when these models are deployed in real-world systems.
+        </p>
+        <p class="bio-text">
+            In my leisure time, I like playing the guzheng, table tennis, hiking and travelling.
+        </p>
+
+    </div>
+</section>
+
+<!-- ===== NEWS SECTION ===== -->
+<section id="news" class="section-wrap alt-bg">
+    <div class="section-container reveal">
+        <div class="section-title-bar">
+            <h2 class="section-title">Recent News</h2>
+        </div>
+        <div class="news-list">
+            <div class="news-item">
+                <span class="news-date">2026.05</span>
+                <div class="news-type-icon news-icon-paper"><i class="bi bi-file-earmark-text-fill"></i></div>
+                <div class="news-content">
+                    One paper has been accepted by <strong>ICML 2026</strong> (CCF-A).
+                </div>
+            </div>
+            <div class="news-item">
+                <span class="news-date">2026.05</span>
+                <div class="news-type-icon news-icon-paper"><i class="bi bi-file-earmark-text-fill"></i></div>
+                <div class="news-content">
+                    One paper has been accepted by <strong>IJCAI 2026</strong> (CCF-B).
+                </div>
+            </div>
+            <div class="news-item">
+                <span class="news-date">2026.02</span>
+                <div class="news-type-icon news-icon-paper"><i class="bi bi-file-earmark-text-fill"></i></div>
+                <div class="news-content">
+                    Two papers have been accepted by <strong>CVPR 2026</strong> (CCF-A).
+                </div>
+            </div>
+            <div class="news-item">
+                <span class="news-date">2026.01</span>
+                <div class="news-type-icon news-icon-paper"><i class="bi bi-file-earmark-text-fill"></i></div>
+                <div class="news-content">
+                    Two papers have been accepted by <strong>ICLR 2026</strong> (CCF-A).
+                </div>
+            </div>
+            <div class="news-item">
+                <span class="news-date">2026.01</span>
+                <div class="news-type-icon news-icon-paper"><i class="bi bi-file-earmark-text-fill"></i></div>
+                <div class="news-content">
+                    One paper has been accepted by <strong>ICASSP 2026</strong> (CCF-B).
+                </div>
+            </div>
+            <div class="news-item">
+                <span class="news-date">2025.12</span>
+                <div class="news-type-icon news-icon-paper"><i class="bi bi-file-earmark-text-fill"></i></div>
+                <div class="news-content">
+                    One paper has been accepted by <strong>TIFS 2025</strong> (CCF-A).
+                </div>
+            </div>
+            <div class="news-item">
+                <span class="news-date">2025.10</span>
+                <div class="news-type-icon news-icon-accept"><i class="bi bi-trophy-fill"></i></div>
+                <div class="news-content">
+                    One paper has been awarded <strong>PRCV Best Paper</strong> and <strong>CCF Outstanding paper</strong>.
+                </div>
+            </div>
+            <div class="news-item">
+                <span class="news-date">2025.09</span>
+                <div class="news-type-icon news-icon-paper"><i class="bi bi-file-earmark-text-fill"></i></div>
+                <div class="news-content">
+                    One paper has been accepted by <strong>NeruIPS 2025</strong> (CCF-A).
+                </div>
+            </div>
+            <div class="news-item">
+                <span class="news-date">2025.09</span>
+                <div class="news-type-icon news-icon-paper"><i class="bi bi-file-earmark-text-fill"></i></div>
+                <div class="news-content">
+                    One paper has been accepted by <strong>WACV 2025</strong>.
+                </div>
+            </div>
+            <div class="news-item">
+                <span class="news-date">2025.07</span>
+                <div class="news-type-icon news-icon-paper"><i class="bi bi-file-earmark-text-fill"></i></div>
+                <div class="news-content">
+                    One paper has been accepted by <strong>ACM MM 2025</strong> (CCF-A).
+                </div>
+            </div>
+            <div class="news-item">
+                <span class="news-date">2025.01</span>
+                <div class="news-type-icon news-icon-paper"><i class="bi bi-file-earmark-text-fill"></i></div>
+                <div class="news-content">
+                    One paper has been accepted by <strong>ICLR 2025</strong> (CCF-A).
+                </div>
+            </div>
+            <div class="news-item">
+                <span class="news-date">2024.11</span>
+                <div class="news-type-icon news-icon-award"><i class="bi bi-award-fill"></i></div>
+                <div class="news-content">
+                    One paper has been awarded <strong>Best Research Paper Award of ICPR MMVPR Workshop</strong>.
+                </div>
+            </div>
+            <div class="news-item">
+                <span class="news-date">2024.10</span>
+                <div class="news-type-icon news-icon-award"><i class="bi bi-award-fill"></i></div>
+                <div class="news-content">
+                    Our team has won the <strong>3rd place</strong> in the Multi-Modal Visual Pattern Recognition Challenge # Track 3 @ ICPR2024.
+                </div>
+            </div>
+            <div class="news-item">
+                <span class="news-date">2024.08</span>
+                <div class="news-type-icon news-icon-lab"><i class="bi bi-flag-fill"></i></div>
+                <div class="news-content">
+                    I have joined Nanjing University (Suzhou Campus) as an Assistant Professor.
+                </div>
+            </div>
+            <div class="news-item">
+                <span class="news-date">2024.07</span>
+                <div class="news-type-icon news-icon-paper"><i class="bi bi-file-earmark-text-fill"></i></div>
+                <div class="news-content">
+                    One paper has been accepted by <strong>ACM MM 2024</strong> (CCF-A).
+                </div>
+            </div>
+            <div class="news-item">
+                <span class="news-date">2024.04</span>
+                <div class="news-type-icon news-icon-paper"><i class="bi bi-file-earmark-text-fill"></i></div>
+                <div class="news-content">
+                    One paper has been accepted by <strong>Machine Intelligence Research</strong>. (IF=6.4)
+                </div>
+            </div>
+            <div class="news-item">
+                <span class="news-date">2024.04</span>
+                <div class="news-type-icon news-icon-paper"><i class="bi bi-file-earmark-text-fill"></i></div>
+                <div class="news-content">
+                    One paper has been published in <strong>TCSVT</strong>. (IF=8.4)
+                </div>
+            </div>
+            <div class="news-item">
+                <span class="news-date">2024.01</span>
+                <div class="news-type-icon news-icon-paper"><i class="bi bi-file-earmark-text-fill"></i></div>
+                <div class="news-content">
+                    One paper has been published in <strong>TMM</strong>. (IF=8.4)
+                </div>
+            </div>
+            <div class="news-item">
+                <span class="news-date">2023.04</span>
+                <div class="news-type-icon news-icon-paper"><i class="bi bi-file-earmark-text-fill"></i></div>
+                <div class="news-content">
+                    One paper has been accepted by <strong>CVPR 2023</strong>. (CCF-A)
+                </div>
+            </div>
+            <div class="news-item">
+                <span class="news-date">2023.11</span>
+                <div class="news-type-icon news-icon-paper"><i class="bi bi-file-earmark-text-fill"></i></div>
+                <div class="news-content">
+                    One paper has been published in <strong>TPAMI</strong>. (IF=23.6)
+                </div>
+            </div>
+            <div class="news-item">
+                <span class="news-date">2021.09</span>
+                <div class="news-type-icon news-icon-paper"><i class="bi bi-file-earmark-text-fill"></i></div>
+                <div class="news-content">
+                    One paper has been accepted by <strong>ACM MM 2021</strong>. (CCF-A)
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== RESEARCH SECTION ===== -->
+<section id="research" class="section-wrap white-bg">
+    <div class="section-container reveal">
+        <div class="section-title-bar">
+            <h2 class="section-title">Research Directions</h2>
+        </div>
+        <div class="research-grid">
+            <div class="research-card">
+                <h5><i class="bi bi-film"></i> Content Generation &amp; Editing</h5>
+                <p>I study the architectural design and performance optimization of generative models and world models, and further investigate deployment-related safety issues such as model memorization leakage, privacy protection, and forged-content detection.</p>
+            </div>
+            <div class="research-card">
+                <h5><i class="bi bi-robot"></i> Large Models &amp; Agents</h5>
+                <p>I focus on foundation large models, RAG, agent architectures, inference acceleration, and multi-agent collaborative decision-making algorithms, while studying model safety alignment, adversarial attack and defense, and safety evaluation.</p>
+            </div>
+            <div class="research-card">
+                <h5><i class="bi bi-person-walking"></i> Embodied Intelligence</h5>
+                <p>I study perception and decision-making algorithms for embodied intelligence, together with related safety challenges in embodied systems and their deployment scenarios.</p>
+            </div>
+            <div class="research-card">
+                <h5><i class="bi bi-shield-check"></i> AI Safety &amp; Security</h5>
+                <p>I work on building trustworthy AI systems for making <strong>network information credible</strong>, including misinformation detection, content provenance, robustness assessment, and security mechanisms for generative and agentic models, as part of <a href="https://github.com/NICE-PRLab" target="_blank" rel="noopener noreferrer"><strong>NICE</strong>-PRLab @ NJU</a>.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Members & Publications moved to separate pages -->
+<!-- ===== JOIN US SECTION ===== -->
+<section id="openings" class="section-wrap alt-bg">
+    <div class="section-container reveal">
+        <div class="section-title-bar">
+            <h2 class="section-title">Join Us</h2>
+        </div>
+        <p class="openings-intro">
+            We welcome highly motivated students with strong research interests and relevant experience. Applicants with first-author CCF-A/B publications or academic competition awards are especially encouraged to contact us. The group continuously recruits research interns at undergraduate, master's, Ph.D., and gap-year stages, as well as postdoctoral researchers.
+        </p>
+        <div class="openings-grid">
+            <div class="opening-card">
+                <h5><i class="bi bi-mortarboard-fill"></i> 2027 Graduate / Ph.D. Students</h5>
+                <ul>
+                    <li>Multiple openings for the 2027 cohort</li>
+                    <li>Backgrounds in computer science, AI, automation, or related fields are welcome</li>
+                    <li>Strong foundations in programming, mathematics, and deep learning</li>
+                    <li>High-quality publications or competition experience are preferred</li>
+                    <li>Long-term research motivation and self-direction</li>
+                </ul>
+            </div>
+            <div class="opening-card">
+                <h5><i class="bi bi-stars"></i> Research Directions</h5>
+                <ul>
+                    <li>Generation and editing: Video World Models and World Action Models</li>
+                    <li>Agent systems: memory, multi-agent collaboration, and decision interaction</li>
+                    <li>Model-intrinsic safety: jailbreak defense, backdoor detection, and prompt injection defense</li>
+                    <li>Synthetic image and video detection, provenance, and attribution</li>
+                    <li>Multimodal large model safety and ethics</li>
+                </ul>
+            </div>
+            <div class="opening-card">
+                <h5><i class="bi bi-person-workspace"></i> Research Interns / Postdocs</h5>
+                <ul>
+                    <li>Undergraduate, master's, Ph.D., and gap-year students are welcome</li>
+                    <li>Postdoctoral researchers are recruited on a rolling basis</li>
+                    <li>Students with clear research interests are encouraged to reach out</li>
+                    <li>Opportunities to collaborate with academic and industry partners</li>
+                    <li>Future Ph.D. applicants are especially welcome</li>
+                </ul>
+            </div>
+        </div>
+        <div class="openings-cta">
+            <div class="openings-cta-text">
+                <h4>Interested in joining us?</h4>
+                <p>Please send your CV by email.</p>
+            </div>
+            <button class="openings-cta-email" type="button" id="copy-email-btn" data-email="ymlv@nju.edu.cn">
+                <i class="bi bi-envelope-fill"></i> ymlv@nju.edu.cn
+            </button>
+        </div>
+
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer id="footer">
+    <div class="footer-inner">
+        <div class="footer-grid">
+            <div class="footer-section footer-map">
+                <div class="visitor-map-wrap">
+                    <div class="widgetContainer" style="display:inline-block; width:180px; min-height:180px;">
+                        <script type="text/javascript" id="clstr_globe" src="https://clustrmaps.com/globe.js?d=oArr-3iWscM_3fvIaVF2hQ1NVPBgA-lGIdWtvTDtyIM"></script>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-section footer-brand">
+                <h5>Yueming Lyu · Nanjing University</h5>
+                <address>
+                    Pattern &amp; Recognition Laboratory<br>
+                    School of Intelligence Science and Technology<br>
+                    <span style="white-space: nowrap;">Nanjing University Suzhou Campus</span><br>
+                    No. 1520 Taihu Avenue, Huqiu District<br>
+                    Suzhou, Jiangsu Province, China
+                </address>
+            </div>
+            <div class="footer-section footer-links">
+                <h5>Quick Links</h5>
+                <a href="#about">About Me</a>
+                <a href="#news">News</a>
+                <a href="#research">Research</a>
+                <a href="./academics.html">Academics</a>
+                <a href="./publications.html">Publications</a>
+                <a href="./teaching.html">Teaching</a>
+                <a href="./members.html">Members</a>
+                <a href="#openings">Join Us</a>
+            </div>
+            <div class="footer-section footer-contact">
+                <h5>Contact</h5>
+                <p>
+                    ymlv@nju.edu.cn
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright &copy; <span id="year"></span> Yueming Lyu, Nanjing University. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Back to Top -->
+<a id="back-to-top" href="javascript:void(0)" title="Back to top"><i class="bi bi-chevron-up"></i></a>
+
+<!-- members.js moved to members.html -->
+<script>
+    // Set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Back to top button
+    window.addEventListener('scroll', function () {
+        var btn = document.getElementById('back-to-top');
+        if (window.scrollY > 400) {
+            btn.classList.add('visible');
+        } else {
+            btn.classList.remove('visible');
+        }
+    });
+    document.getElementById('back-to-top').addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Mobile nav toggle
+    document.getElementById('nav-toggle').addEventListener('click', function () {
+        var nav = document.getElementById('navigation');
+        nav.classList.toggle('open');
+    });
+
+    // ScrollSpy
+    var sections = document.querySelectorAll('section[id]');
+    var navLinks = document.querySelectorAll('#navigation a[href^="#"]');
+    function updateActiveNav() {
+        var scrollY = window.scrollY;
+        var headerH = document.getElementById('header').offsetHeight;
+        var current = '';
+        sections.forEach(function (section) {
+            if (scrollY >= section.offsetTop - headerH - 10) {
+                current = section.getAttribute('id');
+            }
+        });
+        navLinks.forEach(function (link) {
+            link.parentElement.classList.remove('active');
+            if (link.getAttribute('href') === '#' + current) {
+                link.parentElement.classList.add('active');
+            }
+        });
+    }
+    window.addEventListener('scroll', updateActiveNav);
+    updateActiveNav();
+
+    var copyEmailBtn = document.getElementById('copy-email-btn');
+    if (copyEmailBtn) {
+        copyEmailBtn.addEventListener('click', function () {
+            var email = copyEmailBtn.getAttribute('data-email');
+            function showCopied() {
+                var original = '<i class="bi bi-envelope-fill"></i> ' + email;
+                copyEmailBtn.innerHTML = '<i class="bi bi-check-lg"></i> Copied';
+                setTimeout(function () {
+                    copyEmailBtn.innerHTML = original;
+                }, 1600);
+            }
+
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(email).then(showCopied);
+                return;
+            }
+
+            var input = document.createElement('input');
+            input.value = email;
+            document.body.appendChild(input);
+            input.select();
+            document.execCommand('copy');
+            document.body.removeChild(input);
+            showCopied();
+        });
+    }
+
+    // Scroll reveal animation
+    var revealObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(function (el) {
+        revealObserver.observe(el);
+    });
+</script>
+</body>
+</html>

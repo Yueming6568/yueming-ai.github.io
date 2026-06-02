@@ -1,0 +1,178 @@
+window.publicationFallbackData = {
+    "./publications/2026-RADAR.md": {
+        "title": "RADAR: Defending RAG Dynamically against Retrieval Corruption",
+        "authors": "Ziyuan Chen, **Yueming Lyu**, Yi Liu, Weixiang Han, Jing Dong, Caifeng Shan, Tieniu Tan",
+        "venue": "ICML",
+        "year": "2026",
+        "group": "2026",
+        "image": "./assets/img/2026-RADAR.png",
+        "alt": "RADAR",
+        "badges": "ICML 2026|default",
+        "links": "Paper|https://arxiv.org/abs/2605.22041;Code|https://github.com/Etherealllllll/RADAR_code"
+    },
+    "./publications/2026-RunawayEvil.md": {
+        "title": "RunawayEvil: Jailbreaking the Image-to-Video Generative Models",
+        "authors": "Songping Wang, Rufan Qian, **Yueming Lyu**, Qinglong Liu, Linzhuang Zou, Jie Qin, Songhua Liu, Caifeng Shan",
+        "venue": "CVPR",
+        "year": "2026",
+        "group": "2026",
+        "image": "./assets/img/2026-RunawayEvil.png",
+        "alt": "RunawayEvil",
+        "badges": "CVPR 2026|default",
+        "links": "Paper|https://arxiv.org/abs/2512.06674;Code|https://github.com/DeepSota/RunawayEvil"
+    },
+    "./publications/2026-UCOD-MKD.md": {
+        "title": "Beyond Weak Supervision: MLLMs-Guided Graded Knowledge Distillation for Unsupervised Camouflaged Object Detection",
+        "authors": "Huafeng Chen, Chenguang Zhu, **Yueming Lyu**, Caifeng Shan",
+        "venue": "CVPR",
+        "year": "2026",
+        "group": "2026",
+        "image": "./assets/img/2026-UCOD-MKD.png",
+        "alt": "UCOD-MKD",
+        "badges": "CVPR 2026|default",
+        "links": "Paper|https://cvpr.thecvf.com/virtual/2026/poster/40137"
+    },
+    "./publications/2026-J-TLAT.md": {
+        "title": "Exposing and Defending the Achilles' Heel of Video Mixture-of-Experts",
+        "authors": "Songping Wang, Qinglong Liu, **Yueming Lyu**, Ning Li, Ziwen He, Caifeng Shan",
+        "venue": "ICLR",
+        "year": "2026",
+        "group": "2026",
+        "image": "./assets/img/2026-J-TLAT.png",
+        "alt": "J-TLAT",
+        "badges": "ICLR 2026|default",
+        "links": "Paper|https://arxiv.org/abs/2602.01369;Code|https://github.com/DeepSota/J-TLAT"
+    },
+    "./publications/2026-NEURERASE.md": {
+        "title": "NEURERASE: Selective Deactivation of Neurons for Erasing Concepts in Diffusion Models",
+        "authors": "Ziyuan Chen, **Yueming Lyu**, Zheling Meng, Haoxiang Rao, Ning Li, Songping Wang, Caifeng Shan",
+        "venue": "ICASSP",
+        "year": "2026",
+        "group": "2026",
+        "image": "./assets/img/2026-NEURERASE.png",
+        "alt": "NEURERASE",
+        "badges": "ICASSP 2026|default",
+        "links": "Paper|https://ieeexplore.ieee.org/abstract/document/11464730"
+    },
+    "./publications/2026-Category-Guided UCOD with SAM3.md": {
+        "title": "From Language to Segmentation: Collaborative Category-Guided Unsupervised Camouflaged Object Detection with SAM3",
+        "authors": "Huafeng Chen, **Yueming Lyu**, Caifeng Shan",
+        "venue": "IJCAI",
+        "year": "2026",
+        "group": "2026",
+        "image": "./assets/img/2026-Category-Guided UCOD with SAM3.png",
+        "alt": "Category-Guided UCOD with SAM3",
+        "badges": "IJCAI 2026|default",
+        "links": ""
+    },
+    "./publications/2025-saferbench.md": {
+        "title": "SafeRBench: A Comprehensive Benchmark For Safety Assessment In Large Reasoning Models",
+        "authors": "Xin Gao, Shaohan Yu, Zerui Chen, **Yueming Lyu**, Weichen Yu, Guanghao Li, Jiyao Liu, Jianxiong Gao, Jian Liang, Ziwei Liu, Chenyang Si",
+        "venue": "arXiv",
+        "year": "2025",
+        "group": "2025",
+        "image": "./assets/img/saferbench.jpg",
+        "alt": "SafeRBench",
+        "badges": "arXiv 2025|default",
+        "links": "Paper|https://arxiv.org/pdf/2511.15169"
+    },
+    "./publications/2025-good-yueming.md": {
+        "title": "GOOD: Training-Free Guided Diffusion Sampling for Out-of-Distribution Detection",
+        "authors": "Xin Gao, Jiyao Liu, Guanghao Li, **Yueming Lyu**, Jianxiong Gao, Weichen Yu, Ningsheng Xu, Liang Wang, Caifeng Shan, Ziwei Liu, Chenyang Si",
+        "venue": "NeurIPS",
+        "year": "2025",
+        "group": "2025",
+        "image": "./assets/img/good.jpg",
+        "alt": "GOOD",
+        "badges": "NeurIPS 2025|default",
+        "links": "Paper|https://arxiv.org/pdf/2510.17131"
+    },
+    "./publications/2025-VFAT-WS.md": {
+        "title": "Fast Adversarial Training With Weak-to-Strong Spatial-Temporal Consistency in the Frequency Domain on Videos",
+        "authors": "Songping Wang, Hanqing Liu, **Yueming Lyu**, Xiangtao Hu, Zixiang He, Wei Wang, Caifeng Shan, Liang Wang",
+        "venue": "IEEE TIFS",
+        "year": "2025",
+        "group": "2025",
+        "image": "./assets/img/2025-VFAT-WS.png",
+        "alt": "VFAT-WS",
+        "badges": "IEEE TIFS 2025|default",
+        "links": "Paper|https://ieeexplore.ieee.org/abstract/document/11311462;Code|https://github.com/DeepSota/Video-Fast-Adversarial-Training"
+    },
+    "./publications/2025-frequency-domain-distributed-perturbations.md": {
+        "title": "Frequency Domain Distributed Perturbations: Towards Query-Efficient Black-Box Adversarial Video Attack",
+        "authors": "Teng Jin, Ziwen He, Zhangjie Fu, Songping Wang, **Yueming Lyu**, Yufei Shi",
+        "venue": "ACM MM",
+        "year": "2025",
+        "group": "2025",
+        "image": "./assets/img/acmmm25.jpg",
+        "alt": "Frequency Domain Distributed Perturbations",
+        "badges": "ACM MM 2025|default",
+        "links": "Paper|https://dl.acm.org/doi/abs/10.1145/3746027.3755456"
+    },
+    "./publications/2025-image-level-memorization.md": {
+        "title": "Image-level Memorization Detection via Inversion-based Inference Perturbation",
+        "authors": "Yue Jiang, Haokun Lin, Yang Bai, Bo Peng, Zhili Liu, **Yueming Lyu**, Yong Yang, Xing Zheng, Jing Dong",
+        "venue": "ICLR",
+        "year": "2025",
+        "group": "2025",
+        "image": "./assets/img/ICLR25.png",
+        "alt": "Image-level Memorization Detection",
+        "badges": "ICLR 2025|default",
+        "links": "Paper|https://openreview.net/forum?id=vwOq7twk7L"
+    },
+    "./publications/2025-concept-corrector.md": {
+        "title": "Concept Corrector: Erase concepts on the fly for text-to-image diffusion models",
+        "authors": "Zheling Meng, Bo Peng, Xiaochuan Jin, **Yueming Lyu**, Wei Wang, Jing Dong, Tieniu Tan",
+        "venue": "PRCV",
+        "year": "2025",
+        "group": "2025",
+        "image": "./assets/img/prcv25.jpg",
+        "alt": "Concept Corrector",
+        "badges": "PRCV 2025|default;Best Paper|highlight;CCF Outstanding Paper|highlight",
+        "links": "Paper|https://arxiv.org/pdf/2502.16368"
+    },
+    "./publications/2024-social-biases-diffusion.md": {
+        "title": "Mitigating Social Biases in Text-to-Image Diffusion Models via Linguistic-Aligned Attention Guidance",
+        "authors": "Yue Jiang, **Yueming Lyu**, Ziwen He, Bo Peng, Jing Dong",
+        "venue": "ACM MM",
+        "year": "2024",
+        "group": "Earlier",
+        "image": "./assets/img/mm24.png",
+        "alt": "Mitigating Social Biases",
+        "badges": "ACM MM 2024|default",
+        "links": "Paper|https://dl.acm.org/doi/pdf/10.1145/3664647.3680748"
+    },
+    "./publications/2024-3d-aware-adversarial-makeup.md": {
+        "title": "3D-Aware Adversarial Makeup Generation for Facial Privacy Protection",
+        "authors": "**Yueming Lyu**, Yue Jiang, Ziwen He, Bo Peng, Yunfan Liu, Jing Dong",
+        "venue": "TPAMI",
+        "year": "2024",
+        "group": "Earlier",
+        "image": "./assets/img/3damgan.png",
+        "alt": "3D-Aware Adversarial Makeup",
+        "badges": "TPAMI 2024|default",
+        "links": "Paper|https://arxiv.org/pdf/2306.14640"
+    },
+    "./publications/2023-deltaedit.md": {
+        "title": "DeltaEdit: Exploring Text-free Training for Text-Driven Image Manipulation",
+        "authors": "**Yueming Lyu**, Tianwei Lin, Fu Li, Dongliang He, Jing Dong, Tieniu Tan",
+        "venue": "CVPR",
+        "year": "2023",
+        "group": "Earlier",
+        "image": "./assets/img/deltaedit.png",
+        "alt": "DeltaEdit",
+        "badges": "CVPR 2023|default",
+        "links": "Paper|https://arxiv.org/pdf/2303.06285;Code|https://github.com/Yueming6568/DeltaEdit"
+    },
+    "./publications/2021-sogan.md": {
+        "title": "SOGAN: 3D-Aware Shadow and Occlusion Robust GAN for Makeup Transfer",
+        "authors": "**Yueming Lyu**, Jing Dong, Bo Peng, Wei Wang, Tieniu Tan",
+        "venue": "ACM MM",
+        "year": "2021",
+        "group": "Earlier",
+        "image": "./assets/img/sogan.png",
+        "alt": "SOGAN",
+        "badges": "ACM MM 2021|default",
+        "links": "Paper|https://arxiv.org/pdf/2104.10567"
+    }
+};
