@@ -5,7 +5,7 @@ window.publicationFallbackData = {
         "venue": "USENIX Security",
         "year": "2026",
         "group": "2026",
-        "image": "./assets/img/saferbench.jpg",
+        "image": "./assets/img/2026-Agentcanary.png",
         "alt": "AgentCanary",
         "badges": "USENIX Security 2026|default",
         "links": "Paper|https://arxiv.org/abs/2606.10484"
@@ -13,12 +13,12 @@ window.publicationFallbackData = {
     "./publications/2026-confundo.md": {
         "title": "Confundo: Learning to Generate Robust Poison for Practical RAG Systems",
         "authors": "Haoyang Hu, Zhejun Jiang, **Yueming Lyu**, Junyuan Zhang, Yi Liu, Ka-Ho Chow",
-        "venue": "arXiv",
+        "venue": "USENIX Security",
         "year": "2026",
         "group": "2026",
-        "image": "./assets/img/2026-RADAR.png",
+        "image": "./assets/img/2026-Confundo.png",
         "alt": "Confundo",
-        "badges": "arXiv 2026|default",
+        "badges": "USENIX Security 2026|default",
         "links": "Paper|https://arxiv.org/abs/2602.06616"
     },
     "./publications/2026-RADAR.md": {
@@ -49,7 +49,7 @@ window.publicationFallbackData = {
         "venue": "WACV",
         "year": "2026",
         "group": "2026",
-        "image": "./assets/img/2026-J-TLAT.png",
+        "image": "./assets/img/2026-ATM.png",
         "alt": "ATM",
         "badges": "WACV 2026|default",
         "links": "Paper|https://openaccess.thecvf.com/content/WACV2026/html/Han_ATM_Enhanced_Alignment_for_Text-to-Motion_Generation_WACV_2026_paper.html;Code|https://github.com/ke-han-aca/ATM.git"
@@ -104,7 +104,7 @@ window.publicationFallbackData = {
         "venue": "TechRxiv",
         "year": "2026",
         "group": "2026",
-        "image": "./assets/img/yueming-profile.jpg",
+        "image": "./assets/img/2026-human-survey.png",
         "alt": "Human-centric Content Generation Survey",
         "badges": "TechRxiv 2026|default",
         "links": "Paper|https://www.techrxiv.org/doi/full/10.36227/techrxiv.177138906.63173113"
@@ -125,7 +125,7 @@ window.publicationFallbackData = {
         "authors": "Xin Gao, Jiyao Liu, Guanghao Li, **Yueming Lyu**, Jianxiong Gao, Weichen Yu, Ningsheng Xu, Liang Wang, Caifeng Shan, Ziwei Liu, Chenyang Si",
         "venue": "NeurIPS",
         "year": "2025",
-        "group": "2025",
+        "group": "2026",
         "image": "./assets/img/good.jpg",
         "alt": "GOOD",
         "badges": "NeurIPS 2025|default",
