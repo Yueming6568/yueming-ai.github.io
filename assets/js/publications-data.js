@@ -2,12 +2,12 @@ window.publicationFallbackData = {
     "./publications/2026-agentcanary.md": {
         "title": "AgentCanary: A Security Evaluation Framework for Autonomous AI Agents in Real Executable Environments",
         "authors": "Peiyang Li, Songping Wang, Yi Huang, Yanhua Shi, Chenhao Zhang, Qi Li, **Yueming Lyu**, Caifeng Shan, Fengting Li, Chao Feng, Chuanqun Zhu, Liang Chen",
-        "venue": "USENIX Security",
+        "venue": "arXiv",
         "year": "2026",
         "group": "2026",
         "image": "./assets/img/2026-Agentcanary.png",
         "alt": "AgentCanary",
-        "badges": "USENIX Security 2026|default",
+        "badges": "arXiv 2026|default",
         "links": "Paper|https://arxiv.org/abs/2606.10484"
     },
     "./publications/2026-confundo.md": {
@@ -49,10 +49,21 @@ window.publicationFallbackData = {
         "venue": "WACV",
         "year": "2026",
         "group": "2026",
-        "image": "./assets/img/2026-ATM.png",
+        "image": "./assets/img/2026-MATE.png",
         "alt": "ATM",
         "badges": "WACV 2026|default",
         "links": "Paper|https://openaccess.thecvf.com/content/WACV2026/html/Han_ATM_Enhanced_Alignment_for_Text-to-Motion_Generation_WACV_2026_paper.html;Code|https://github.com/ke-han-aca/ATM.git"
+    },
+    "./publications/2026-motion-aligned-word-embeddings.md": {
+        "title": "Motion-Aligned Word Embeddings for Text-to-Motion Generation",
+        "authors": "Ke Han, **Yueming Lyu**, Nicu Sebe",
+        "venue": "ICLR",
+        "year": "2026",
+        "group": "2026",
+        "image": "./assets/img/2026-ATM.png",
+        "alt": "Motion-Aligned Word Embeddings",
+        "badges": "ICLR 2026|default",
+        "links": "Paper|https://openreview.net/forum?id=zbHpRwzrq5"
     },
     "./publications/2026-UCOD-MKD.md": {
         "title": "Beyond Weak Supervision: MLLMs-Guided Graded Knowledge Distillation for Unsupervised Camouflaged Object Detection",
@@ -100,21 +111,21 @@ window.publicationFallbackData = {
     },
     "./publications/2026-human-centric-content-generation-survey.md": {
         "title": "Human-centric Content Generation with Diffusion Models: A Survey",
-        "authors": "**Yueming Lyu**",
+        "authors": "Songlin Yang, **Yueming Lyu**, Ziyuan Chen, Yang Li, Beibei Dong, Xiaoxuan Han, Pei Yang, Ziye Wang, Anyi Rao, Ziwei Liu, Jing Dong, Hongbo Fu, Caifeng Shan, Xiaoming Liu, Liang Wang, Chenyang Si",
         "venue": "TechRxiv",
         "year": "2026",
         "group": "2026",
         "image": "./assets/img/2026-human-survey.png",
         "alt": "Human-centric Content Generation Survey",
         "badges": "TechRxiv 2026|default",
-        "links": "Paper|https://www.techrxiv.org/doi/full/10.36227/techrxiv.177138906.63173113"
+        "links": "Paper|https://www.techrxiv.org/doi/full/10.36227/techrxiv.177138906.63173113;Code|https://github.com/Songlin1998/awesome-diffusion-human-centric"
     },
     "./publications/2025-saferbench.md": {
         "title": "SafeRBench: A Comprehensive Benchmark for Safety Assessment in Large Reasoning Models",
         "authors": "Xin Gao, Shaohan Yu, Zerui Chen, **Yueming Lyu**, Weichen Yu, Guanghao Li, Jiyao Liu, Jianxiong Gao, Jian Liang, Ziwei Liu, Chenyang Si",
         "venue": "arXiv",
         "year": "2025",
-        "group": "2026",
+        "group": "2025",
         "image": "./assets/img/saferbench.jpg",
         "alt": "SafeRBench",
         "badges": "arXiv 2025|default",
@@ -125,7 +136,7 @@ window.publicationFallbackData = {
         "authors": "Xin Gao, Jiyao Liu, Guanghao Li, **Yueming Lyu**, Jianxiong Gao, Weichen Yu, Ningsheng Xu, Liang Wang, Caifeng Shan, Ziwei Liu, Chenyang Si",
         "venue": "NeurIPS",
         "year": "2025",
-        "group": "2026",
+        "group": "2025",
         "image": "./assets/img/good.jpg",
         "alt": "GOOD",
         "badges": "NeurIPS 2025|default",
