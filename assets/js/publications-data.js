@@ -1,4 +1,26 @@
 window.publicationFallbackData = {
+    "./publications/2026-agentcanary.md": {
+        "title": "AgentCanary: A Security Evaluation Framework for Autonomous AI Agents in Real Executable Environments",
+        "authors": "Peiyang Li, Songping Wang, Yi Huang, Yanhua Shi, Chenhao Zhang, Qi Li, **Yueming Lyu**, Caifeng Shan, Fengting Li, Chao Feng, Chuanqun Zhu, Liang Chen",
+        "venue": "USENIX Security",
+        "year": "2026",
+        "group": "2026",
+        "image": "./assets/img/saferbench.jpg",
+        "alt": "AgentCanary",
+        "badges": "USENIX Security 2026|default",
+        "links": "Paper|https://arxiv.org/abs/2606.10484"
+    },
+    "./publications/2026-confundo.md": {
+        "title": "Confundo: Learning to Generate Robust Poison for Practical RAG Systems",
+        "authors": "Haoyang Hu, Zhejun Jiang, **Yueming Lyu**, Junyuan Zhang, Yi Liu, Ka-Ho Chow",
+        "venue": "arXiv",
+        "year": "2026",
+        "group": "2026",
+        "image": "./assets/img/2026-RADAR.png",
+        "alt": "Confundo",
+        "badges": "arXiv 2026|default",
+        "links": "Paper|https://arxiv.org/abs/2602.06616"
+    },
     "./publications/2026-RADAR.md": {
         "title": "RADAR: Defending RAG Dynamically against Retrieval Corruption",
         "authors": "Ziyuan Chen, **Yueming Lyu**, Yi Liu, Weixiang Han, Jing Dong, Caifeng Shan, Tieniu Tan",
@@ -20,6 +42,17 @@ window.publicationFallbackData = {
         "alt": "RunawayEvil",
         "badges": "CVPR 2026|default",
         "links": "Paper|https://arxiv.org/abs/2512.06674;Code|https://github.com/DeepSota/RunawayEvil"
+    },
+    "./publications/2026-atm.md": {
+        "title": "ATM: Enhanced Alignment for Text-to-Motion Generation",
+        "authors": "Ke Han, **Yueming Lyu**, Weichen Yu, Nicu Sebe",
+        "venue": "WACV",
+        "year": "2026",
+        "group": "2026",
+        "image": "./assets/img/2026-J-TLAT.png",
+        "alt": "ATM",
+        "badges": "WACV 2026|default",
+        "links": "Paper|https://openaccess.thecvf.com/content/WACV2026/html/Han_ATM_Enhanced_Alignment_for_Text-to-Motion_Generation_WACV_2026_paper.html;Code|https://github.com/ke-han-aca/ATM.git"
     },
     "./publications/2026-UCOD-MKD.md": {
         "title": "Beyond Weak Supervision: MLLMs-Guided Graded Knowledge Distillation for Unsupervised Camouflaged Object Detection",
@@ -65,16 +98,27 @@ window.publicationFallbackData = {
         "badges": "IJCAI 2026|default",
         "links": ""
     },
+    "./publications/2026-human-centric-content-generation-survey.md": {
+        "title": "Human-centric Content Generation with Diffusion Models: A Survey",
+        "authors": "**Yueming Lyu**",
+        "venue": "TechRxiv",
+        "year": "2026",
+        "group": "2026",
+        "image": "./assets/img/yueming-profile.jpg",
+        "alt": "Human-centric Content Generation Survey",
+        "badges": "TechRxiv 2026|default",
+        "links": "Paper|https://www.techrxiv.org/doi/full/10.36227/techrxiv.177138906.63173113"
+    },
     "./publications/2025-saferbench.md": {
-        "title": "SafeRBench: A Comprehensive Benchmark For Safety Assessment In Large Reasoning Models",
+        "title": "SafeRBench: A Comprehensive Benchmark for Safety Assessment in Large Reasoning Models",
         "authors": "Xin Gao, Shaohan Yu, Zerui Chen, **Yueming Lyu**, Weichen Yu, Guanghao Li, Jiyao Liu, Jianxiong Gao, Jian Liang, Ziwei Liu, Chenyang Si",
         "venue": "arXiv",
         "year": "2025",
-        "group": "2025",
+        "group": "2026",
         "image": "./assets/img/saferbench.jpg",
         "alt": "SafeRBench",
         "badges": "arXiv 2025|default",
-        "links": "Paper|https://arxiv.org/pdf/2511.15169"
+        "links": "Paper|https://arxiv.org/abs/2511.15169"
     },
     "./publications/2025-good-yueming.md": {
         "title": "GOOD: Training-Free Guided Diffusion Sampling for Out-of-Distribution Detection",
@@ -85,7 +129,7 @@ window.publicationFallbackData = {
         "image": "./assets/img/good.jpg",
         "alt": "GOOD",
         "badges": "NeurIPS 2025|default",
-        "links": "Paper|https://arxiv.org/pdf/2510.17131"
+        "links": "Paper|https://proceedings.neurips.cc/paper_files/paper/2025/hash/123fd8a56501194823c8e0dca00733df-Abstract-Conference.html"
     },
     "./publications/2025-VFAT-WS.md": {
         "title": "Fast Adversarial Training With Weak-to-Strong Spatial-Temporal Consistency in the Frequency Domain on Videos",

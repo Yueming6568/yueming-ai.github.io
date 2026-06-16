@@ -7,5 +7,5 @@ group: 2025
 image: ./assets/img/good.jpg
 alt: GOOD
 badges: NeurIPS 2025|default
-links: Paper|https://arxiv.org/pdf/2510.17131
+links: Paper|https://proceedings.neurips.cc/paper_files/paper/2025/hash/123fd8a56501194823c8e0dca00733df-Abstract-Conference.html
 ---
