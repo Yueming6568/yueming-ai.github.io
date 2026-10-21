@@ -109,6 +109,7 @@ const labMembers = {
             name: "Baoke Dou",
             title: "Master's Students",
             period: "2025.09~Present",
+            intern: "Intern at Tencent Youtu",
             photo: "./assets/img/people/Baoke Dou.jpg",
             email: "bkdou@smail.nju.edu.cn",
             github: "https://github.com/Doubaoke"
